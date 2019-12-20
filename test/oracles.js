@@ -16,12 +16,9 @@ contract('Oracles', async (accounts) => {
     const STATUS_CODE_LATE_WEATHER = 30;
     const STATUS_CODE_LATE_TECHNICAL = 40;
     const STATUS_CODE_LATE_OTHER = 50;
-
   });
 
-
   it('can register oracles', async () => {
-    
     // ARRANGE
     let fee = await config.flightSuretyApp.REGISTRATION_FEE.call();
 
@@ -34,7 +31,6 @@ contract('Oracles', async (accounts) => {
   });
 
   it('can request flight status', async () => {
-    
     // ARRANGE
     let flight = 'ND1309'; // Course number
     let timestamp = Math.floor(Date.now() / 1000);
@@ -60,15 +56,9 @@ contract('Oracles', async (accounts) => {
         }
         catch(e) {
           // Enable this when debugging
-           console.log('\nError', idx, oracleIndexes[idx].toNumber(), flight, timestamp);
+          console.log('\nError', idx, oracleIndexes[idx].toNumber(), flight, timestamp);
         }
-
       }
     }
-
-
   });
-
-
- 
 });
